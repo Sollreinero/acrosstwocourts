@@ -11,7 +11,9 @@
 
 <style>
 
-/* GENERAL */
+/* =========================
+   GENERAL
+========================= */
 
 * {
   box-sizing: border-box;
@@ -41,7 +43,9 @@ body {
 }
 
 
-/* MAIN LAYOUT*/
+/* =========================
+   MAIN LAYOUT
+========================= */
 
 main {
   min-height: calc(100vh - 65px);
@@ -66,7 +70,9 @@ main {
 }
 
 
-/*  COVER */
+/* =========================
+   BOOK COVER
+========================= */
 
 .cover-container {
   width: 100%;
@@ -83,45 +89,21 @@ main {
   box-shadow:
     0 35px 70px rgba(0, 0, 0, .42),
     0 8px 20px rgba(0, 0, 0, .25);
-
-  transition:
-    transform .3s ease,
-    box-shadow .3s ease;
-}
-
-.cover:hover {
-  transform: translateY(-6px);
-
-  box-shadow:
-    0 42px 85px rgba(0, 0, 0, .5),
-    0 10px 25px rgba(0, 0, 0, .3);
 }
 
 
-/* RIGHT SIDE CONTENT */
+/* =========================
+   RIGHT SIDE CONTENT
+========================= */
 
 .content {
   max-width: 620px;
 }
 
 
-/* Small text above title */
-
-.eyebrow {
-  margin: 0 0 14px;
-
-  font-size: 12px;
-  font-weight: 700;
-
-  letter-spacing: .22em;
-
-  text-transform: uppercase;
-
-  color: #d2d3d8;
-}
-
-
-/* Main title */
+/* =========================
+   TITLE
+========================= */
 
 h1 {
   margin: 0;
@@ -141,7 +123,9 @@ h1 {
 }
 
 
-/* Author */
+/* =========================
+   AUTHOR
+========================= */
 
 .author {
   margin: 15px 0 32px;
@@ -159,7 +143,9 @@ h1 {
 }
 
 
-/* DESCRIPTION */
+/* =========================
+   DESCRIPTION
+========================= */
 
 .copy {
   max-width: 590px;
@@ -176,7 +162,9 @@ h1 {
 }
 
 
-/* BUTTONS */
+/* =========================
+   BUTTONS
+========================= */
 
 .buttons {
   display: flex;
@@ -192,7 +180,6 @@ a.button {
   display: inline-flex;
 
   align-items: center;
-
   justify-content: center;
 
   min-height: 50px;
@@ -210,24 +197,21 @@ a.button {
   text-decoration: none;
 
   transition:
-    transform .2s ease,
-    background .2s ease,
-    border-color .2s ease,
-    box-shadow .2s ease;
-}
-
-a.button:hover {
-  transform: translateY(-2px);
+    transform .22s ease,
+    background .22s ease,
+    box-shadow .22s ease;
 }
 
 
+/* SILVER BUTTON */
 
 .silver {
-  background: linear-gradient(
-    135deg,
-    #eeeeF1,
-    #c8c9cf
-  );
+  background:
+    linear-gradient(
+      135deg,
+      #eeeeF1,
+      #c8c9cf
+    );
 
   color: #282344;
 
@@ -235,48 +219,55 @@ a.button:hover {
     0 6px 18px rgba(0, 0, 0, .18);
 }
 
+
+/* BUTTON HOVER EFFECT */
+
 .silver:hover {
-  background: linear-gradient(
-    135deg,
-    #ffffff,
-    #dadbe0
-  );
+  transform: translateY(-4px);
+
+  background:
+    linear-gradient(
+      135deg,
+      #ffffff,
+      #e3e4e8
+    );
 
   box-shadow:
-    0 9px 22px rgba(0, 0, 0, .24);
+    0 12px 28px rgba(0, 0, 0, .28),
+    0 0 18px rgba(235, 235, 245, .20);
 }
 
 
+/* Button press effect */
 
-.outline {
-  color: #ffffff;
+.silver:active {
+  transform: translateY(-1px);
 
-  border: 1px solid rgba(220, 220, 225, .65);
-
-  background: rgba(255, 255, 255, .04);
-}
-
-.outline:hover {
-  background: rgba(255, 255, 255, .10);
-
-  border-color: #e1e1e5;
+  box-shadow:
+    0 5px 12px rgba(0, 0, 0, .22);
 }
 
 
+/* =========================
+   PUBLISHER
+========================= */
 
 .publisher {
   margin-top: 45px;
 
-  padding-top: 23px;
+  padding-top: 25px;
 
   border-top:
     1px solid rgba(255, 255, 255, .15);
+
+  text-align: center;
 }
 
-.publisher .label {
-  margin: 0 0 8px;
 
-  font-size: 10px;
+.publisher .label {
+  margin: 0 0 10px;
+
+  font-size: 11px;
 
   font-weight: 700;
 
@@ -284,31 +275,45 @@ a.button:hover {
 
   text-transform: uppercase;
 
-  color: #bfc0c8;
+  color: #c7c8cf;
 }
+
+
+/* UB PRESS LOGO AREA */
 
 .press-line {
   display: flex;
 
   align-items: center;
+  justify-content: center;
 
-  justify-content: flex-start;
+  gap: 8px;
 
-  gap: 6px;
+  width: 100%;
 }
+
+
+/* UB ICON */
 
 .press-icon {
   width: auto;
 
-  height: 45px;
+  height: 65px;
 }
+
+
+/* UNIVERSITY OF BRIDGEPORT PRESS TEXT */
 
 .press-letters {
-  width: 310px;
+  width: 400px;
 
-  max-width: 70%;
+  max-width: 78%;
 }
 
+
+/* =========================
+   FOOTER
+========================= */
 
 footer {
   text-align: center;
@@ -324,6 +329,9 @@ footer {
 }
 
 
+/* =========================
+   TABLET / MOBILE
+========================= */
 
 @media (max-width: 800px) {
 
@@ -374,8 +382,20 @@ footer {
   .press-line {
     justify-content: center;
   }
+
+  .press-icon {
+    height: 58px;
+  }
+
+  .press-letters {
+    width: 360px;
+  }
 }
 
+
+/* =========================
+   SMALL PHONES
+========================= */
 
 @media (max-width: 480px) {
 
@@ -403,8 +423,13 @@ footer {
     width: 100%;
   }
 
+  .press-icon {
+    height: 50px;
+  }
+
   .press-letters {
-    max-width: 75%;
+    width: 280px;
+    max-width: 76%;
   }
 }
 
@@ -420,7 +445,7 @@ footer {
   <div class="wrap">
 
 
-    <!COVER>
+    <!-- BOOK COVER -->
 
     <div class="cover-container">
 
@@ -434,7 +459,7 @@ footer {
 
 
 
-    <! BOOK INFO>
+    <!-- BOOK INFO -->
 
     <div class="content">
 
@@ -450,7 +475,7 @@ footer {
 
 
 
-      <!DESCRIPTION>
+      <!-- DESCRIPTION -->
 
       <div class="copy">
 
