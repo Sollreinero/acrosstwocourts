@@ -1,234 +1,579 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>Across Two Courts | Laia Albàs Ferrer</title>
+
 <link rel="icon" type="image/png" href="favicon.png?v=2">
+
 <style>
-*{box-sizing:border-box}
 
-body{
-  margin:0;
-  font-family:Arial, Helvetica, sans-serif;
-  color:white;
-  background:linear-gradient(135deg,#5d5fbb,#7066c9,#231943);
-}
+/* =========================
+   GENERAL
+========================= */
 
-main{
-  min-height:100vh;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  padding:60px 24px;
+* {
+  box-sizing: border-box;
 }
 
-.wrap{
-  max-width:1100px;
-  width:100%;
-  display:flex;
-  align-items:center;
-  gap:70px;
+html {
+  scroll-behavior: smooth;
 }
 
-.cover{
-  width:360px;
-  max-width:100%;
-  border-radius:8px;
-  box-shadow:0 30px 70px rgba(0,0,0,.45);
-}
-.cover-container{
-  text-align:center;
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  color: #ffffff;
+
+  background:
+    radial-gradient(
+      circle at 18% 20%,
+      rgba(116, 105, 205, .45),
+      transparent 38%
+    ),
+    linear-gradient(
+      135deg,
+      #5759ad 0%,
+      #4b438f 45%,
+      #211a3f 100%
+    );
 }
 
-.cover-credit{
-  margin-top:10px;
-  font-size:13px;
-  color:rgba(255,255,255,.75);
+
+/* =========================
+   MAIN LAYOUT
+========================= */
+
+main {
+  min-height: calc(100vh - 65px);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 70px 30px;
 }
 
-.cover-credit a{
-  color:inherit;
-  text-decoration:underline;
-  text-underline-offset:2px;
+.wrap {
+  width: 100%;
+  max-width: 1100px;
+
+  display: grid;
+  grid-template-columns: 350px 1fr;
+
+  gap: 80px;
+
+  align-items: center;
 }
 
-.cover-credit a:hover{
-  color:white;
+
+/* =========================
+   BOOK COVER
+========================= */
+
+.cover-container {
+  width: 100%;
 }
 
-.content{
-  flex:1;
+.cover {
+  display: block;
+
+  width: 100%;
+  max-width: 350px;
+
+  border-radius: 6px;
+
+  box-shadow:
+    0 35px 70px rgba(0, 0, 0, .42),
+    0 8px 20px rgba(0, 0, 0, .25);
+
+  transition:
+    transform .3s ease,
+    box-shadow .3s ease;
 }
 
-.headline{
-  text-transform:uppercase;
-  letter-spacing:.16em;
-  font-size:18px;
-  opacity:.9;
-  margin-bottom:18px;
+.cover:hover {
+  transform: translateY(-6px);
+
+  box-shadow:
+    0 42px 85px rgba(0, 0, 0, .5),
+    0 10px 25px rgba(0, 0, 0, .3);
 }
 
-h1{
-  font-family:Georgia,"Times New Roman",serif;
-  font-size:64px;
-  line-height:.92;
-  margin:0 0 24px;
+
+/* =========================
+   RIGHT SIDE CONTENT
+========================= */
+
+.content {
+  max-width: 620px;
 }
 
-.question{
-  font-size:48px;
-  line-height:1.05;
-  margin:0 0 24px;
+
+/* Small text above title */
+
+.eyebrow {
+  margin: 0 0 14px;
+
+  font-size: 12px;
+  font-weight: 700;
+
+  letter-spacing: .22em;
+
+  text-transform: uppercase;
+
+  color: #d2d3d8;
 }
 
-.copy{
-  font-size:15px;
-  line-height:1.35;
-  max-width:620px;
+
+/* Main title */
+
+h1 {
+  margin: 0;
+
+  font-family:
+    Georgia,
+    "Times New Roman",
+    serif;
+
+  font-size: clamp(48px, 6vw, 70px);
+
+  line-height: .98;
+
+  font-weight: 500;
+
+  letter-spacing: -.025em;
 }
 
-.copy p{
-  margin:0 0 16px;
+
+/* Author */
+
+.author {
+  margin: 15px 0 32px;
+
+  font-family:
+    Georgia,
+    "Times New Roman",
+    serif;
+
+  font-size: 19px;
+
+  font-style: italic;
+
+  color: #d1d1d7;
 }
 
-.read-line{
-  font-size:24px;
-  font-weight:bold;
-  margin-top:18px;
+
+/* =========================
+   DESCRIPTION
+========================= */
+
+.copy {
+  max-width: 590px;
+
+  font-size: 17px;
+
+  line-height: 1.7;
+
+  color: rgba(255, 255, 255, .88);
 }
 
-.buttons{
-  margin-top:34px;
+.copy p {
+  margin: 0 0 18px;
 }
 
-a.button{
-  display:inline-block;
-  text-decoration:none;
-  padding:14px 26px;
-  border-radius:999px;
-  margin:8px 8px 8px 0;
-  font-size:16px;
+
+/* =========================
+   BUTTONS
+========================= */
+
+.buttons {
+  display: flex;
+
+  flex-wrap: wrap;
+
+  gap: 12px;
+
+  margin-top: 32px;
 }
 
-.gold{
-  background:#f2c94c;
-  color:#231943;
-  font-weight:bold;
+a.button {
+  display: inline-flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  min-height: 50px;
+
+  padding: 0 26px;
+
+  border-radius: 5px;
+
+  font-size: 14px;
+
+  font-weight: 700;
+
+  letter-spacing: .03em;
+
+  text-decoration: none;
+
+  transition:
+    transform .2s ease,
+    background .2s ease,
+    border-color .2s ease,
+    box-shadow .2s ease;
 }
 
-.outline{
-  color:white;
-  border:1px solid rgba(255,255,255,.75);
+a.button:hover {
+  transform: translateY(-2px);
 }
 
-.publisher{
-  text-align:center;
-  margin-top:45px;
+
+/* SILVER MAIN BUTTON */
+
+.silver {
+  background: linear-gradient(
+    135deg,
+    #eeeeF1,
+    #c8c9cf
+  );
+
+  color: #282344;
+
+  box-shadow:
+    0 6px 18px rgba(0, 0, 0, .18);
 }
 
-.publisher .label{
-  text-transform:uppercase;
-  letter-spacing:.16em;
-  font-size:13px;
-  opacity:.9;
-  margin-bottom:2px;
+.silver:hover {
+  background: linear-gradient(
+    135deg,
+    #ffffff,
+    #dadbe0
+  );
+
+  box-shadow:
+    0 9px 22px rgba(0, 0, 0, .24);
 }
 
-.press-line{
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  gap:5px;
+
+/* SECOND BUTTON */
+
+.outline {
+  color: #ffffff;
+
+  border: 1px solid rgba(220, 220, 225, .65);
+
+  background: rgba(255, 255, 255, .04);
 }
 
-.press-icon{
-  width:auto;
-  height:55px;
+.outline:hover {
+  background: rgba(255, 255, 255, .10);
+
+  border-color: #e1e1e5;
 }
 
-.press-letters{
-  width:450px;
-  max-width:85%;
-  opacity:1;
-}
-  
-.bold-line{
-  font-weight:800;
+
+/* =========================
+   PUBLISHER
+========================= */
+
+.publisher {
+  margin-top: 45px;
+
+  padding-top: 23px;
+
+  border-top:
+    1px solid rgba(255, 255, 255, .15);
 }
 
-footer{
-  text-align:center;
-  padding:26px;
-  border-top:1px solid rgba(255,255,255,.18);
-  font-size:14px;
-  opacity:.85;
+.publisher .label {
+  margin: 0 0 8px;
+
+  font-size: 10px;
+
+  font-weight: 700;
+
+  letter-spacing: .20em;
+
+  text-transform: uppercase;
+
+  color: #bfc0c8;
 }
 
-@media(max-width:800px){
-  .wrap{
-    flex-direction:column;
-    text-align:center;
-    gap:40px;
+.press-line {
+  display: flex;
+
+  align-items: center;
+
+  justify-content: flex-start;
+
+  gap: 6px;
+}
+
+.press-icon {
+  width: auto;
+
+  height: 45px;
+}
+
+.press-letters {
+  width: 310px;
+
+  max-width: 70%;
+}
+
+
+/* =========================
+   FOOTER
+========================= */
+
+footer {
+  text-align: center;
+
+  padding: 22px;
+
+  border-top:
+    1px solid rgba(255, 255, 255, .10);
+
+  font-size: 12px;
+
+  color: rgba(255, 255, 255, .55);
+}
+
+
+/* =========================
+   TABLET / MOBILE
+========================= */
+
+@media (max-width: 800px) {
+
+  main {
+    padding: 50px 22px;
   }
 
-  h1{
-    font-size:48px;
+  .wrap {
+    grid-template-columns: 1fr;
+
+    gap: 45px;
+
+    text-align: center;
   }
 
-  .question{
-    font-size:36px;
+  .cover-container {
+    width: min(310px, 85%);
+
+    margin: 0 auto;
   }
 
-  .copy{
-    font-size:18px;
+  .cover {
+    margin: 0 auto;
   }
 
-  a.button{
-    display:block;
-    width:280px;
-    margin:12px auto;
+  .content {
+    margin: 0 auto;
+  }
+
+  h1 {
+    font-size: 48px;
+  }
+
+  .copy {
+    font-size: 16px;
+
+    line-height: 1.65;
+  }
+
+  .buttons {
+    justify-content: center;
+  }
+
+  .publisher {
+    text-align: center;
+  }
+
+  .press-line {
+    justify-content: center;
   }
 }
+
+
+/* =========================
+   SMALL PHONES
+========================= */
+
+@media (max-width: 480px) {
+
+  main {
+    padding: 40px 20px;
+  }
+
+  h1 {
+    font-size: 41px;
+  }
+
+  .author {
+    font-size: 17px;
+  }
+
+  .copy {
+    font-size: 16px;
+  }
+
+  .buttons {
+    flex-direction: column;
+  }
+
+  a.button {
+    width: 100%;
+  }
+
+  .press-letters {
+    max-width: 75%;
+  }
+}
+
 </style>
 </head>
 
+
 <body>
 
-<main>
-  <div class="wrap">
-<div class="cover-container">
-  <img src="cover.jpg" alt="Across Two Courts book cover" class="cover">
 
-</div>
+<main>
+
+  <div class="wrap">
+
+
+    <!-- BOOK COVER -->
+
+    <div class="cover-container">
+
+      <img
+        src="cover.jpg"
+        alt="Across Two Courts book cover"
+        class="cover"
+      >
+
+    </div>
+
+
+
+    <!-- BOOK INFORMATION -->
+
+    <div class="content">
+
+
+      <p class="eyebrow">
+        A TRUE BASKETBALL STORY
+      </p>
+
+
+      <h1>
+        Across Two Courts
+      </h1>
+
+
+      <p class="author">
+        by Laia Albàs Ferrer
+      </p>
+
+
+
+      <!-- DESCRIPTION -->
 
       <div class="copy">
 
-        <p class="read-line"><em>Across Two Courts</em>captures the heart and soul of a young basketball player’s journey from Catalonia to the United States as she follows her dream to compete successfully in the game she loves. With honesty and humor, Laia Albàs Ferrer shares the challenges of leaving home, adapting to a new culture and competing in American college basketball. Her true-life story is about courage, resilience and pursuing a dream far from home.</p>
+        <p>
+          <em>Across Two Courts</em> captures the heart and soul
+          of a young basketball player’s journey from Catalonia
+          to the United States as she follows her dream to compete
+          successfully in the game she loves.
+        </p>
+
+        <p>
+          With honesty and humor, Laia Albàs Ferrer shares the
+          challenges of leaving home, adapting to a new culture
+          and competing in American college basketball. Her
+          true-life story is about courage, resilience and
+          pursuing a dream far from home.
+        </p>
 
       </div>
+
+
+
+      <!-- BUTTONS -->
 
       <div class="buttons">
-        <a class="button gold" href="https://www.amazon.com/Across-Two-Courts-Basketball-Opportunity/dp/B0HKGCV4LY/ref=sr_1_1?crid=1AOM22BE3M0SN&dib=eyJ2IjoiMSJ9.htcZvxUsdP__gesCaxgCyzlmQ5w3ysiW_Wo-BnPEqWAW3QwDk9Gcevf6AtkxkATBQl6Yv0XpXWSggwFXX__Gjc5I3GxV0Ffxt0pA1h9qpiRwKTiEYBBVJBsjLfmfi-ZKqbksCRFrzxAcDHfySvxbBPUNYbtJc9vqIdsp5snyUnXbt2A32qlSmDn1TakL_QV7bMv62pZi4_f0SajX-uJa1zox-qBTGXO2uRRUfVSfLZw.ayJv6apcUbTK5JR9apNDJOP36LoRl24N1KJ-6cXiEn0&dib_tag=se&keywords=across+two+courts&qid=1790081589&sprefix=across+two+courts%2Caps%2C107&sr=8-1" target="_blank">Buy Across Two Courts</a>
-        <a class="button gold" href="https://www.linkedin.com/in/authormikebarlow/" target="_blank">Contact  Laia Albàs Ferrer </a>
+
+        <a
+          class="button silver"
+          href="https://www.amazon.com/dp/B0HKGCV4LY"
+          target="_blank"
+          rel="noopener"
+        >
+          Buy Across Two Courts
+        </a>
+
+
+        <a
+          class="button outline"
+          href="https://www.linkedin.com/in/authormikebarlow/"
+          target="_blank"
+          rel="noopener"
+        >
+          Contact Laia Albàs Ferrer
+        </a>
+
       </div>
 
+
+
+      <!-- PUBLISHER -->
+
       <section class="publisher">
-        <p class="label">Published by</p>
+
+        <p class="label">
+          Published by
+        </p>
+
 
         <div class="press-line">
-          <img src="logo.png" alt="" class="press-icon">
-          <img src="letters.png" alt="University of Bridgeport Press" class="press-letters">
+
+          <img
+            src="logo.png"
+            alt=""
+            class="press-icon"
+          >
+
+          <img
+            src="letters.png"
+            alt="University of Bridgeport Press"
+            class="press-letters"
+          >
+
         </div>
+
       </section>
 
+
     </div>
+
   </div>
+
 </main>
 
+
+
 <footer>
-© Laia Albàs Ferrer 
+  © Laia Albàs Ferrer
 </footer>
 
+
 </body>
+
 </html>
