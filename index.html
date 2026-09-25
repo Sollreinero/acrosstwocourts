@@ -1,3 +1,4 @@
+```html
 <!DOCTYPE html>
 <html lang="en">
 
@@ -44,7 +45,7 @@ body {
 
 
 /* =========================
-   MAIN LAYOUT
+   HERO / MAIN LAYOUT
 ========================= */
 
 main {
@@ -170,30 +171,23 @@ h1 {
 
 .buttons {
   display: flex;
-
   flex-wrap: wrap;
-
   gap: 12px;
-
   margin-top: 32px;
 }
 
 a.button {
   display: inline-flex;
-
   align-items: center;
   justify-content: center;
 
   min-height: 50px;
-
   padding: 0 26px;
 
   border-radius: 5px;
 
   font-size: 14px;
-
   font-weight: 700;
-
   letter-spacing: .03em;
 
   text-decoration: none;
@@ -201,7 +195,8 @@ a.button {
   transition:
     transform .22s ease,
     background .22s ease,
-    box-shadow .22s ease;
+    box-shadow .22s ease,
+    border-color .22s ease;
 }
 
 
@@ -223,9 +218,6 @@ a.button {
     0 6px 18px rgba(0, 0, 0, .18);
 }
 
-
-/* BUTTON HOVER EFFECT */
-
 .silver:hover {
   transform: translateY(-4px);
 
@@ -241,14 +233,32 @@ a.button {
     0 0 18px rgba(210, 204, 218, .24);
 }
 
-
-/* BUTTON CLICK EFFECT */
-
 .silver:active {
   transform: translateY(-1px);
+}
+
+
+/* =========================
+   PRESS KIT OUTLINE BUTTON
+========================= */
+
+.press-button {
+  background: transparent;
+
+  color: #d8d4dc;
+
+  border: 1px solid rgba(216, 212, 220, .65);
+}
+
+.press-button:hover {
+  transform: translateY(-4px);
+
+  background: rgba(255, 255, 255, .08);
+
+  border-color: #e5e2e8;
 
   box-shadow:
-    0 5px 12px rgba(0, 0, 0, .22);
+    0 10px 24px rgba(0, 0, 0, .20);
 }
 
 
@@ -258,7 +268,6 @@ a.button {
 
 .publisher {
   margin-top: 45px;
-
   padding-top: 25px;
 
   border-top:
@@ -271,11 +280,8 @@ a.button {
   margin: 0 0 10px;
 
   font-size: 11px;
-
   font-weight: 700;
-
   letter-spacing: .20em;
-
   text-transform: uppercase;
 
   color: #c9c4ce;
@@ -288,7 +294,6 @@ a.button {
 
 .press-line {
   display: flex;
-
   align-items: center;
   justify-content: center;
 
@@ -297,22 +302,361 @@ a.button {
   width: 100%;
 }
 
-
-/* UB ICON */
-
 .press-icon {
   width: auto;
-
   height: 65px;
 }
 
-
-/* UNIVERSITY OF BRIDGEPORT PRESS TEXT */
-
 .press-letters {
   width: 400px;
-
   max-width: 78%;
+}
+
+
+/* =====================================================
+   PRESS KIT
+===================================================== */
+
+.press-kit {
+  position: relative;
+
+  padding: 105px 30px 115px;
+
+  background:
+    radial-gradient(
+      circle at 80% 15%,
+      rgba(128, 78, 150, .18),
+      transparent 35%
+    ),
+    linear-gradient(
+      180deg,
+      rgba(28, 17, 36, .96),
+      rgba(37, 22, 48, .98)
+    );
+
+  border-top:
+    1px solid rgba(220, 215, 225, .16);
+}
+
+.press-inner {
+  width: 100%;
+  max-width: 1080px;
+  margin: 0 auto;
+}
+
+
+/* =========================
+   PRESS HEADER
+========================= */
+
+.press-header {
+  text-align: center;
+
+  max-width: 700px;
+
+  margin: 0 auto 75px;
+}
+
+.press-kicker {
+  margin: 0 0 14px;
+
+  font-size: 12px;
+  font-weight: 700;
+
+  letter-spacing: .28em;
+
+  text-transform: uppercase;
+
+  color: #bdb8c3;
+}
+
+.press-title {
+  margin: 0 0 18px;
+
+  font-family:
+    Georgia,
+    "Times New Roman",
+    serif;
+
+  font-size: clamp(46px, 6vw, 68px);
+
+  line-height: 1;
+
+  font-weight: 400;
+
+  color: #d6d2da;
+}
+
+.press-intro {
+  margin: 0;
+
+  font-size: 16px;
+
+  line-height: 1.7;
+
+  color: rgba(255, 255, 255, .68);
+}
+
+
+/* =========================
+   PRESS SECTIONS
+========================= */
+
+.press-section {
+  padding: 70px 0;
+
+  border-top:
+    1px solid rgba(220, 215, 225, .14);
+}
+
+.section-label {
+  margin: 0 0 16px;
+
+  font-size: 11px;
+
+  font-weight: 700;
+
+  letter-spacing: .23em;
+
+  text-transform: uppercase;
+
+  color: #aaa5af;
+}
+
+.section-heading {
+  margin: 0 0 28px;
+
+  font-family:
+    Georgia,
+    "Times New Roman",
+    serif;
+
+  font-size: clamp(32px, 4vw, 44px);
+
+  font-weight: 400;
+
+  color: #d6d2da;
+}
+
+
+/* =========================
+   ABOUT BOOK
+========================= */
+
+.book-about {
+  display: grid;
+
+  grid-template-columns: 1fr 2fr;
+
+  gap: 65px;
+
+  align-items: start;
+}
+
+.book-about-title h2 {
+  margin-top: 0;
+}
+
+.press-copy {
+  font-size: 17px;
+
+  line-height: 1.8;
+
+  color: rgba(255, 255, 255, .82);
+}
+
+.press-copy p {
+  margin: 0 0 20px;
+}
+
+
+/* =========================
+   ABOUT AUTHOR
+========================= */
+
+.author-layout {
+  display: grid;
+
+  grid-template-columns: 330px 1fr;
+
+  gap: 65px;
+
+  align-items: center;
+}
+
+.author-main-photo {
+  width: 100%;
+
+  display: block;
+
+  border-radius: 5px;
+
+  box-shadow:
+    0 25px 55px rgba(0, 0, 0, .35);
+}
+
+
+/* =========================
+   PHOTO GALLERY
+========================= */
+
+.gallery-header {
+  margin-bottom: 35px;
+}
+
+.photo-grid {
+  display: grid;
+
+  grid-template-columns:
+    repeat(4, 1fr);
+
+  gap: 16px;
+}
+
+.photo-grid a {
+  display: block;
+
+  overflow: hidden;
+
+  border-radius: 5px;
+
+  background: #24172f;
+}
+
+.photo-grid img {
+  display: block;
+
+  width: 100%;
+  height: 330px;
+
+  object-fit: cover;
+
+  transition:
+    transform .35s ease,
+    opacity .35s ease;
+}
+
+.photo-grid a:hover img {
+  transform: scale(1.035);
+
+  opacity: .88;
+}
+
+.photo-note {
+  margin: 18px 0 0;
+
+  font-size: 13px;
+
+  color: rgba(255, 255, 255, .48);
+}
+
+
+/* =========================
+   INTERVIEW QUESTIONS
+========================= */
+
+.interview-intro {
+  max-width: 650px;
+
+  margin-bottom: 40px;
+
+  font-size: 16px;
+
+  line-height: 1.7;
+
+  color: rgba(255, 255, 255, .65);
+}
+
+.questions {
+  max-width: 900px;
+}
+
+.question {
+  display: grid;
+
+  grid-template-columns: 65px 1fr;
+
+  gap: 25px;
+
+  padding: 27px 0;
+
+  border-top:
+    1px solid rgba(220, 215, 225, .12);
+}
+
+.question:last-child {
+  border-bottom:
+    1px solid rgba(220, 215, 225, .12);
+}
+
+.question-number {
+  font-family:
+    Georgia,
+    "Times New Roman",
+    serif;
+
+  font-size: 18px;
+
+  color: #aaa6b0;
+}
+
+.question-text {
+  margin: 0;
+
+  font-family:
+    Georgia,
+    "Times New Roman",
+    serif;
+
+  font-size: 20px;
+
+  line-height: 1.55;
+
+  color: rgba(255, 255, 255, .88);
+}
+
+
+/* =========================
+   PRESS CONTACT
+========================= */
+
+.press-contact {
+  margin-top: 70px;
+
+  padding: 45px;
+
+  text-align: center;
+
+  border:
+    1px solid rgba(220, 215, 225, .16);
+
+  border-radius: 6px;
+
+  background:
+    rgba(255, 255, 255, .025);
+}
+
+.press-contact h3 {
+  margin: 0 0 12px;
+
+  font-family:
+    Georgia,
+    "Times New Roman",
+    serif;
+
+  font-size: 29px;
+
+  font-weight: 400;
+
+  color: #d6d2da;
+}
+
+.press-contact p {
+  margin: 0 0 25px;
+
+  color: rgba(255, 255, 255, .65);
+
+  line-height: 1.6;
 }
 
 
@@ -325,6 +669,8 @@ footer {
 
   padding: 22px;
 
+  background: #1c1124;
+
   border-top:
     1px solid rgba(220, 215, 225, .12);
 
@@ -335,7 +681,31 @@ footer {
 
 
 /* =========================
-   TABLET / MOBILE
+   TABLET
+========================= */
+
+@media (max-width: 900px) {
+
+  .book-about {
+    grid-template-columns: 1fr;
+    gap: 15px;
+  }
+
+  .author-layout {
+    grid-template-columns: 280px 1fr;
+    gap: 40px;
+  }
+
+  .photo-grid {
+    grid-template-columns:
+      repeat(2, 1fr);
+  }
+
+}
+
+
+/* =========================
+   MOBILE
 ========================= */
 
 @media (max-width: 800px) {
@@ -395,6 +765,30 @@ footer {
   .press-letters {
     width: 360px;
   }
+
+  .press-kit {
+    padding:
+      80px 24px 90px;
+  }
+
+  .press-header {
+    margin-bottom: 55px;
+  }
+
+  .press-section {
+    padding: 55px 0;
+  }
+
+  .author-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .author-main-photo {
+    max-width: 360px;
+
+    margin: 0 auto;
+  }
+
 }
 
 
@@ -434,8 +828,43 @@ footer {
 
   .press-letters {
     width: 280px;
+
     max-width: 76%;
   }
+
+  .press-kit {
+    padding:
+      65px 20px 75px;
+  }
+
+  .press-title {
+    font-size: 45px;
+  }
+
+  .photo-grid {
+    grid-template-columns: 1fr 1fr;
+
+    gap: 10px;
+  }
+
+  .photo-grid img {
+    height: 235px;
+  }
+
+  .question {
+    grid-template-columns: 42px 1fr;
+
+    gap: 12px;
+  }
+
+  .question-text {
+    font-size: 18px;
+  }
+
+  .press-contact {
+    padding: 35px 22px;
+  }
+
 }
 
 </style>
@@ -444,6 +873,10 @@ footer {
 
 <body>
 
+
+<!-- =====================================================
+     HERO
+====================================================== -->
 
 <main>
 
@@ -523,7 +956,15 @@ footer {
           target="_blank"
           rel="noopener"
         >
-          Contact Laia Albàs Ferrer
+          Contact Laia
+        </a>
+
+
+        <a
+          class="button press-button"
+          href="#press-kit"
+        >
+          Press Kit ↓
         </a>
 
       </div>
@@ -566,9 +1007,380 @@ footer {
 
 
 
+<!-- =====================================================
+     PRESS KIT
+====================================================== -->
+
+<section
+  class="press-kit"
+  id="press-kit"
+>
+
+  <div class="press-inner">
+
+
+    <!-- PRESS KIT HEADER -->
+
+    <header class="press-header">
+
+      <p class="press-kicker">
+        Media Resources
+      </p>
+
+      <h2 class="press-title">
+        Press Kit
+      </h2>
+
+      <p class="press-intro">
+        Author information, photography and interview resources
+        for <em>Across Two Courts</em>.
+      </p>
+
+    </header>
+
+
+
+    <!-- =========================
+         ABOUT THE BOOK
+    ========================== -->
+
+    <section class="press-section book-about">
+
+      <div class="book-about-title">
+
+        <p class="section-label">
+          Across Two Courts
+        </p>
+
+        <h2 class="section-heading">
+          About the Book
+        </h2>
+
+      </div>
+
+
+      <div class="press-copy">
+
+        <p>
+          <em>Across Two Courts</em> captures the heart and soul
+          of a young basketball player’s journey from Catalonia
+          to the United States as she follows her dream to compete
+          successfully in the game she loves.
+        </p>
+
+        <p>
+          With honesty and humor, Laia Albàs Ferrer shares the
+          challenges of leaving home, adapting to a new culture
+          and competing in American college basketball. Her
+          true-life story is about courage, resilience and
+          pursuing a dream far from home.
+        </p>
+
+      </div>
+
+    </section>
+
+
+
+    <!-- =========================
+         ABOUT THE AUTHOR
+    ========================== -->
+
+    <section class="press-section">
+
+      <div class="author-layout">
+
+
+        <div>
+
+          <img
+            src="author1.jpg"
+            alt="Laia Albàs Ferrer"
+            class="author-main-photo"
+          >
+
+        </div>
+
+
+        <div>
+
+          <p class="section-label">
+            Author Biography
+          </p>
+
+          <h2 class="section-heading">
+            About Laia
+          </h2>
+
+
+          <div class="press-copy">
+
+            <p>
+              Laia Albàs Ferrer is a student-athlete currently
+              studying at the University of Bridgeport. Originally
+              from Santpedor, in central Catalonia, Spain, she has
+              pursued her passion for basketball at the collegiate
+              level while working toward a degree in business.
+              Her experiences in Catalonia and the United States
+              have shaped her perspective on sports, discipline
+              and personal growth.
+            </p>
+
+            <p>
+              Her journey between both environments, on and off
+              the court, inspired her to write
+              <em>Across Two Courts</em>. The book reflects on the
+              challenges, growth and cultural transitions that have
+              shaped her path, drawing from personal experiences,
+              as well as interviews conducted over the years.
+              Through her writing, Laia explores themes of identity,
+              resilience and the intersection of sports and personal
+              development.
+            </p>
+
+            <p>
+              <em>Across Two Courts</em> is her first book, born
+              from her experiences as a student-athlete navigating
+              two distinct worlds of sports and academics.
+            </p>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+
+    <!-- =========================
+         AUTHOR PHOTOS
+    ========================== -->
+
+    <section class="press-section">
+
+      <div class="gallery-header">
+
+        <p class="section-label">
+          Media
+        </p>
+
+        <h2 class="section-heading">
+          Author Photos
+        </h2>
+
+      </div>
+
+
+      <div class="photo-grid">
+
+        <a
+          href="author1.jpg"
+          target="_blank"
+          aria-label="View author photo 1"
+        >
+          <img
+            src="author1.jpg"
+            alt="Laia Albàs Ferrer author photo"
+          >
+        </a>
+
+
+        <a
+          href="author2.jpg"
+          target="_blank"
+          aria-label="View author photo 2"
+        >
+          <img
+            src="author2.jpg"
+            alt="Laia Albàs Ferrer author photo"
+          >
+        </a>
+
+
+        <a
+          href="author3.jpg"
+          target="_blank"
+          aria-label="View author photo 3"
+        >
+          <img
+            src="author3.jpg"
+            alt="Laia Albàs Ferrer author photo"
+          >
+        </a>
+
+
+        <a
+          href="author4.jpg"
+          target="_blank"
+          aria-label="View author photo 4"
+        >
+          <img
+            src="author4.jpg"
+            alt="Laia Albàs Ferrer author photo"
+          >
+        </a>
+
+      </div>
+
+
+      <p class="photo-note">
+        Click any image to view the full-resolution photograph.
+      </p>
+
+    </section>
+
+
+
+    <!-- =========================
+         INTERVIEW QUESTIONS
+    ========================== -->
+
+    <section class="press-section">
+
+      <p class="section-label">
+        Interviews
+      </p>
+
+      <h2 class="section-heading">
+        Suggested Interview Questions
+      </h2>
+
+
+      <p class="interview-intro">
+        Suggested conversation starters for interviews,
+        podcasts, features and other media appearances.
+      </p>
+
+
+      <div class="questions">
+
+
+        <div class="question">
+
+          <div class="question-number">
+            01
+          </div>
+
+          <p class="question-text">
+            You came to the United States from a small town in
+            Catalonia to pursue basketball. What surprised you
+            most when you arrived?
+          </p>
+
+        </div>
+
+
+        <div class="question">
+
+          <div class="question-number">
+            02
+          </div>
+
+          <p class="question-text">
+            What are the biggest differences between the way
+            student-athletes are treated in Europe and the
+            United States?
+          </p>
+
+        </div>
+
+
+        <div class="question">
+
+          <div class="question-number">
+            03
+          </div>
+
+          <p class="question-text">
+            Your basketball career has included injuries,
+            setbacks and unexpected opportunities. What have
+            those experiences taught you?
+          </p>
+
+        </div>
+
+
+        <div class="question">
+
+          <div class="question-number">
+            04
+          </div>
+
+          <p class="question-text">
+            What would you tell a young European athlete who
+            is considering coming to the United States to play
+            college sports?
+          </p>
+
+        </div>
+
+
+        <div class="question">
+
+          <div class="question-number">
+            05
+          </div>
+
+          <p class="question-text">
+            You called the book <em>Across Two Courts</em>.
+            What do those “two courts” represent to you now?
+          </p>
+
+        </div>
+
+
+      </div>
+
+    </section>
+
+
+
+    <!-- =========================
+         CONTACT
+    ========================== -->
+
+    <div class="press-contact">
+
+      <h3>
+        Media &amp; Interview Inquiries
+      </h3>
+
+      <p>
+        For interview requests, media inquiries or additional
+        information about <em>Across Two Courts</em>, contact
+        Laia Albàs Ferrer.
+      </p>
+
+      <a
+        class="button silver"
+        href="https://www.linkedin.com/in/laia-alb%C3%A0s/"
+        target="_blank"
+        rel="noopener"
+      >
+        Contact Laia Albàs Ferrer
+      </a>
+
+    </div>
+
+
+  </div>
+
+</section>
+
+
+
 <footer>
   © Laia Albàs Ferrer
 </footer>
+
+
+</body>
+
+</html>
+```
+
 
 
 </body>
