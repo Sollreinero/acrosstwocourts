@@ -306,7 +306,11 @@ a.button {
 ===================================================== */
 
 .press-kit {
+display: none;
   position: relative;
+.press-kit.open {
+  display: block;
+}
 
   padding: 105px 30px 115px;
 
@@ -963,6 +967,7 @@ footer {
         <a
           class="button silver"
           href="#press-kit"
+         onclick="openPressKit(event)"
         >
           Press Kit ↓
         </a>
@@ -1373,7 +1378,21 @@ footer {
       </a>
 
     </div>
+<div class="press-contact">
 
+  <h3>
+    Return to Across Two Courts
+  </h3>
+
+  <a
+    href="#"
+    class="button silver"
+    onclick="closePressKit(event)"
+  >
+    ↑ Back to Book
+  </a>
+
+</div>
 
   </div>
 
@@ -1384,7 +1403,40 @@ footer {
 <footer>
   © Laia Albàs Ferrer
 </footer>
+<script>
 
+function openPressKit(event) {
+  event.preventDefault();
+
+  const pressKit = document.getElementById("press-kit");
+
+  pressKit.classList.add("open");
+
+  setTimeout(function() {
+    pressKit.scrollIntoView({
+      behavior: "smooth",
+      block: "start"
+    });
+  }, 50);
+}
+
+
+function closePressKit(event) {
+  event.preventDefault();
+
+  window.scrollTo({
+    top: 0,
+    behavior: "smooth"
+  });
+
+  setTimeout(function() {
+    document
+      .getElementById("press-kit")
+      .classList.remove("open");
+  }, 700);
+}
+
+</script>
 
 </body>
 
