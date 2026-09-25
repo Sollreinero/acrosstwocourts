@@ -177,16 +177,20 @@ h1 {
 
 a.button {
   display: inline-flex;
+
   align-items: center;
   justify-content: center;
 
   min-height: 50px;
+
   padding: 0 26px;
 
   border-radius: 5px;
 
   font-size: 14px;
+
   font-weight: 700;
+
   letter-spacing: .03em;
 
   text-decoration: none;
@@ -194,8 +198,7 @@ a.button {
   transition:
     transform .22s ease,
     background .22s ease,
-    box-shadow .22s ease,
-    border-color .22s ease;
+    box-shadow .22s ease;
 }
 
 
@@ -234,30 +237,9 @@ a.button {
 
 .silver:active {
   transform: translateY(-1px);
-}
-
-
-/* =========================
-   PRESS KIT BUTTON
-========================= */
-
-.press-button {
-  background: transparent;
-
-  color: #d8d4dc;
-
-  border: 1px solid rgba(216, 212, 220, .65);
-}
-
-.press-button:hover {
-  transform: translateY(-4px);
-
-  background: rgba(255, 255, 255, .08);
-
-  border-color: #e5e2e8;
 
   box-shadow:
-    0 10px 24px rgba(0, 0, 0, .20);
+    0 5px 12px rgba(0, 0, 0, .22);
 }
 
 
@@ -267,6 +249,7 @@ a.button {
 
 .publisher {
   margin-top: 45px;
+
   padding-top: 25px;
 
   border-top:
@@ -279,8 +262,11 @@ a.button {
   margin: 0 0 10px;
 
   font-size: 11px;
+
   font-weight: 700;
+
   letter-spacing: .20em;
+
   text-transform: uppercase;
 
   color: #c9c4ce;
@@ -293,6 +279,7 @@ a.button {
 
 .press-line {
   display: flex;
+
   align-items: center;
   justify-content: center;
 
@@ -303,11 +290,13 @@ a.button {
 
 .press-icon {
   width: auto;
+
   height: 65px;
 }
 
 .press-letters {
   width: 400px;
+
   max-width: 78%;
 }
 
@@ -339,7 +328,9 @@ a.button {
 
 .press-inner {
   width: 100%;
+
   max-width: 1080px;
+
   margin: 0 auto;
 }
 
@@ -360,6 +351,7 @@ a.button {
   margin: 0 0 14px;
 
   font-size: 12px;
+
   font-weight: 700;
 
   letter-spacing: .28em;
@@ -510,6 +502,8 @@ a.button {
     repeat(4, 1fr);
 
   gap: 16px;
+
+  align-items: stretch;
 }
 
 .photo-grid a {
@@ -520,12 +514,16 @@ a.button {
   border-radius: 5px;
 
   background: #24172f;
+
+  box-shadow:
+    0 15px 35px rgba(0, 0, 0, .22);
 }
 
 .photo-grid img {
   display: block;
 
   width: 100%;
+
   height: 330px;
 
   object-fit: cover;
@@ -687,11 +685,13 @@ footer {
 
   .book-about {
     grid-template-columns: 1fr;
+
     gap: 15px;
   }
 
   .author-layout {
     grid-template-columns: 280px 1fr;
+
     gap: 40px;
   }
 
@@ -841,7 +841,8 @@ footer {
   }
 
   .photo-grid {
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns:
+      1fr 1fr;
 
     gap: 10px;
   }
@@ -959,12 +960,12 @@ footer {
         </a>
 
 
-<a
-  class="button silver"
-  href="#press-kit"
->
-  Press Kit ↓
-</a>
+        <a
+          class="button silver"
+          href="#press-kit"
+        >
+          Press Kit ↓
+        </a>
 
       </div>
 
@@ -1093,7 +1094,7 @@ footer {
         <div>
 
           <img
-            src="author1.jpg"
+            src="author3.jpg"
             alt="Laia Albàs Ferrer"
             class="author-main-photo"
           >
@@ -1154,7 +1155,7 @@ footer {
 
 
     <!-- =========================
-         AUTHOR PHOTOS
+         MEDIA PHOTOS
     ========================== -->
 
     <section class="press-section">
@@ -1166,13 +1167,16 @@ footer {
         </p>
 
         <h2 class="section-heading">
-          Author Photos
+          Author Photos &amp; Book Cover
         </h2>
 
       </div>
 
 
       <div class="photo-grid">
+
+
+        <!-- AUTHOR PHOTO 1 -->
 
         <a
           href="author1.jpg"
@@ -1186,6 +1190,8 @@ footer {
         </a>
 
 
+        <!-- AUTHOR PHOTO 2 -->
+
         <a
           href="author2.jpg"
           target="_blank"
@@ -1198,6 +1204,8 @@ footer {
         </a>
 
 
+        <!-- AUTHOR PHOTO 3 -->
+
         <a
           href="author3.jpg"
           target="_blank"
@@ -1209,11 +1217,26 @@ footer {
           >
         </a>
 
+
+        <!-- BOOK COVER -->
+
+        <a
+          href="cover.jpg"
+          target="_blank"
+          aria-label="View Across Two Courts book cover"
+        >
+          <img
+            src="cover.jpg"
+            alt="Across Two Courts book cover"
+          >
+        </a>
+
+
       </div>
 
 
       <p class="photo-note">
-        Click any image to view the full-resolution photograph.
+        Click any image to view the full-resolution photograph or book cover.
       </p>
 
     </section>
