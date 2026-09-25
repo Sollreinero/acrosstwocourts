@@ -170,8 +170,11 @@ h1 {
 
 .buttons {
   display: flex;
+
   flex-wrap: wrap;
+
   gap: 12px;
+
   margin-top: 32px;
 }
 
@@ -305,12 +308,12 @@ a.button {
    PRESS KIT
 ===================================================== */
 
+/* Hidden until Press Kit button is clicked */
+
 .press-kit {
-display: none;
+  display: none;
+
   position: relative;
-.press-kit.open {
-  display: block;
-}
 
   padding: 105px 30px 115px;
 
@@ -329,6 +332,14 @@ display: none;
   border-top:
     1px solid rgba(220, 215, 225, .16);
 }
+
+
+/* Show press kit when opened */
+
+.press-kit.open {
+  display: block;
+}
+
 
 .press-inner {
   width: 100%;
@@ -662,6 +673,17 @@ display: none;
 
 
 /* =========================
+   BACK TO BOOK
+========================= */
+
+.back-to-book {
+  margin-top: 55px;
+
+  text-align: center;
+}
+
+
+/* =========================
    FOOTER
 ========================= */
 
@@ -882,7 +904,7 @@ footer {
      HERO
 ====================================================== -->
 
-<main>
+<main id="book">
 
   <div class="wrap">
 
@@ -967,7 +989,7 @@ footer {
         <a
           class="button silver"
           href="#press-kit"
-         onclick="openPressKit(event)"
+          onclick="openPressKit(event)"
         >
           Press Kit ↓
         </a>
@@ -1181,11 +1203,10 @@ footer {
       <div class="photo-grid">
 
 
-        <!-- AUTHOR PHOTO 1 -->
-
         <a
           href="author1.jpg"
           target="_blank"
+          rel="noopener"
           aria-label="View author photo 1"
         >
           <img
@@ -1195,11 +1216,10 @@ footer {
         </a>
 
 
-        <!-- AUTHOR PHOTO 2 -->
-
         <a
           href="author2.jpg"
           target="_blank"
+          rel="noopener"
           aria-label="View author photo 2"
         >
           <img
@@ -1209,11 +1229,10 @@ footer {
         </a>
 
 
-        <!-- AUTHOR PHOTO 3 -->
-
         <a
           href="author3.jpg"
           target="_blank"
+          rel="noopener"
           aria-label="View author photo 3"
         >
           <img
@@ -1223,11 +1242,10 @@ footer {
         </a>
 
 
-        <!-- BOOK COVER -->
-
         <a
           href="cover.jpg"
           target="_blank"
+          rel="noopener"
           aria-label="View Across Two Courts book cover"
         >
           <img
@@ -1353,7 +1371,7 @@ footer {
 
 
     <!-- =========================
-         CONTACT
+         MEDIA CONTACT
     ========================== -->
 
     <div class="press-contact">
@@ -1378,21 +1396,25 @@ footer {
       </a>
 
     </div>
-<div class="press-contact">
 
-  <h3>
-    Return to Across Two Courts
-  </h3>
 
-  <a
-    href="#"
-    class="button silver"
-    onclick="closePressKit(event)"
-  >
-    ↑ Back to Book
-  </a>
 
-</div>
+    <!-- =========================
+         BACK TO BOOK
+    ========================== -->
+
+    <div class="back-to-book">
+
+      <a
+        href="#book"
+        class="button silver"
+        onclick="closePressKit(event)"
+      >
+        ↑ Back to Book
+      </a>
+
+    </div>
+
 
   </div>
 
@@ -1403,25 +1425,38 @@ footer {
 <footer>
   © Laia Albàs Ferrer
 </footer>
+
+
+
+<!-- =====================================================
+     PRESS KIT OPEN / CLOSE
+====================================================== -->
+
 <script>
 
 function openPressKit(event) {
+
   event.preventDefault();
 
-  const pressKit = document.getElementById("press-kit");
+  const pressKit =
+    document.getElementById("press-kit");
 
   pressKit.classList.add("open");
 
   setTimeout(function() {
+
     pressKit.scrollIntoView({
       behavior: "smooth",
       block: "start"
     });
+
   }, 50);
+
 }
 
 
 function closePressKit(event) {
+
   event.preventDefault();
 
   window.scrollTo({
@@ -1430,13 +1465,18 @@ function closePressKit(event) {
   });
 
   setTimeout(function() {
-    document
-      .getElementById("press-kit")
-      .classList.remove("open");
-  }, 700);
+
+    const pressKit =
+      document.getElementById("press-kit");
+
+    pressKit.classList.remove("open");
+
+  }, 800);
+
 }
 
 </script>
+
 
 </body>
 
