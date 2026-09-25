@@ -672,16 +672,6 @@ a.button {
 }
 
 
-/* =========================
-   BACK TO BOOK
-========================= */
-
-.back-to-book {
-  margin-top: 55px;
-
-  text-align: center;
-}
-
 
 /* =========================
    FOOTER
@@ -1451,27 +1441,6 @@ function openPressKit(event) {
     });
 
   }, 50);
-
-}
-
-
-function closePressKit(event) {
-
-  event.preventDefault();
-
-  window.scrollTo({
-    top: 0,
-    behavior: "smooth"
-  });
-
-  setTimeout(function() {
-
-    const pressKit =
-      document.getElementById("press-kit");
-
-    pressKit.classList.remove("open");
-
-  }, 800);
 
 }
 
