@@ -1,794 +1,558 @@
+
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
 <title>Across Two Courts | Laia Albàs Ferrer</title>
-
 <link rel="icon" type="image/png" href="favicon.png?v=2">
 
 <style>
+* { box-sizing: border-box; }
 
-
-
-* {
-  box-sizing: border-box;
-}
-
-html {
-  scroll-behavior: smooth;
-}
+html { scroll-behavior: smooth; }
 
 body {
   margin: 0;
   font-family: Arial, Helvetica, sans-serif;
   color: #ffffff;
-
   background:
-    radial-gradient(
-      circle at 18% 20%,
-      rgba(139, 87, 166, .42),
-      transparent 38%
-    ),
-    linear-gradient(
-      135deg,
-      #70408d 0%,
-      #56316f 48%,
-      #24172f 100%
-    );
+    radial-gradient(circle at 18% 20%, rgba(139,87,166,.42), transparent 38%),
+    linear-gradient(135deg, #70408d 0%, #56316f 48%, #24172f 100%);
 }
 
-
-
-
+/* MAIN BOOK SECTION */
 main {
   min-height: calc(100vh - 65px);
-
   display: flex;
   align-items: center;
   justify-content: center;
-
   padding: 70px 30px;
 }
 
 .wrap {
   width: 100%;
   max-width: 1200px;
-
   display: grid;
   grid-template-columns: 430px 1fr;
-
   gap: 75px;
-
   align-items: center;
 }
 
-
-/* =========================
-   BOOK COVER
-========================= */
-
-.cover-container {
-  width: 100%;
-}
+.cover-container { width: 100%; }
 
 .cover {
   display: block;
-
   width: 100%;
   max-width: 430px;
-
   border-radius: 6px;
-
-  box-shadow:
-    0 35px 70px rgba(0, 0, 0, .42),
-    0 8px 20px rgba(0, 0, 0, .25);
+  box-shadow: 0 35px 70px rgba(0,0,0,.42),
+              0 8px 20px rgba(0,0,0,.25);
 }
 
-
-/* =========================
-   RIGHT SIDE CONTENT
-========================= */
-
-.content {
-  max-width: 620px;
-}
-
-
-/* =========================
-   TITLE
-========================= */
+.content { max-width: 620px; }
 
 h1 {
   margin: 0;
-
-  font-family:
-    Georgia,
-    "Times New Roman",
-    serif;
-
+  font-family: Georgia, "Times New Roman", serif;
   font-size: clamp(48px, 6vw, 70px);
-
   line-height: .98;
-
   font-weight: 500;
-
   letter-spacing: -.025em;
-
   color: #d0ccd5;
 }
 
-
-/* =========================
-   AUTHOR
-========================= */
-
 .author {
   margin: 15px 0 32px;
-
-  font-family:
-    Georgia,
-    "Times New Roman",
-    serif;
-
+  font-family: Georgia, "Times New Roman", serif;
   font-size: 19px;
-
   font-style: italic;
-
   color: #d8d4dc;
 }
 
-
-/* =========================
-   DESCRIPTION
-========================= */
-
 .copy {
   max-width: 590px;
-
   font-size: 17px;
-
   line-height: 1.7;
-
-  color: rgba(255, 255, 255, .90);
+  color: rgba(255,255,255,.90);
 }
 
-.copy p {
-  margin: 0 0 18px;
-}
+.copy p { margin: 0 0 18px; }
 
-
-/* =========================
-   BUTTONS
-========================= */
-
+/* BUTTONS */
 .buttons {
   display: flex;
-
   flex-wrap: wrap;
-
   gap: 12px;
-
   margin-top: 32px;
 }
 
 a.button {
   display: inline-flex;
-
   align-items: center;
   justify-content: center;
-
   min-height: 50px;
-
   padding: 0 26px;
-
   border-radius: 5px;
-
   font-size: 14px;
-
   font-weight: 700;
-
   letter-spacing: .03em;
-
   text-decoration: none;
-
-  transition:
-    transform .22s ease,
-    background .22s ease,
-    box-shadow .22s ease;
+  transition: transform .22s ease,
+              background .22s ease,
+              box-shadow .22s ease;
 }
 
-
-/* =========================
-   SILVER BUTTONS
-========================= */
-
 .silver {
-  background:
-    linear-gradient(
-      135deg,
-      #d5d2d9,
-      #aaa6b0
-    );
-
+  background: linear-gradient(135deg, #d5d2d9, #aaa6b0);
   color: #35233f;
-
-  box-shadow:
-    0 6px 18px rgba(0, 0, 0, .18);
+  box-shadow: 0 6px 18px rgba(0,0,0,.18);
 }
 
 .silver:hover {
   transform: translateY(-4px);
-
-  background:
-    linear-gradient(
-      135deg,
-      #e5e2e8,
-      #c3bec8
-    );
-
-  box-shadow:
-    0 12px 28px rgba(0, 0, 0, .28),
-    0 0 18px rgba(210, 204, 218, .24);
+  background: linear-gradient(135deg, #e5e2e8, #c3bec8);
+  box-shadow: 0 12px 28px rgba(0,0,0,.28),
+              0 0 18px rgba(210,204,218,.24);
 }
 
-.silver:active {
-  transform: translateY(-1px);
+.silver:active { transform: translateY(-1px); }
 
-  box-shadow:
-    0 5px 12px rgba(0, 0, 0, .22);
-}
-
-
-/* =========================
-   PUBLISHER
-========================= */
-
+/* PUBLISHER */
 .publisher {
   margin-top: 45px;
-
   padding-top: 25px;
-
-  border-top:
-    1px solid rgba(220, 215, 225, .18);
-
+  border-top: 1px solid rgba(220,215,225,.18);
   text-align: center;
 }
 
 .publisher .label {
   margin: 0 0 10px;
-
   font-size: 11px;
-
   font-weight: 700;
-
   letter-spacing: .20em;
-
   text-transform: uppercase;
-
   color: #c9c4ce;
 }
 
-
-/* =========================
-   UB PRESS LOGO AREA
-========================= */
-
 .press-line {
   display: flex;
-
   align-items: center;
   justify-content: center;
-
   gap: 8px;
-
   width: 100%;
 }
 
 .press-icon {
   width: auto;
-
   height: 65px;
 }
 
 .press-letters {
   width: 400px;
-
   max-width: 78%;
 }
 
-
-/* =====================================================
-   PRESS KIT
-===================================================== */
-
-/* Hidden until Press Kit button is clicked */
-
-.press-kit {
-  display: none;
-
-  position: relative;
-
-  padding: 105px 30px 115px;
-
+/* =====================================
+   IN THE PRESS - MAIN WEBSITE
+===================================== */
+.in-the-press {
+  padding: 100px 30px 110px;
   background:
-    radial-gradient(
-      circle at 80% 15%,
-      rgba(128, 78, 150, .18),
-      transparent 35%
-    ),
-    linear-gradient(
-      180deg,
-      rgba(28, 17, 36, .96),
-      rgba(37, 22, 48, .98)
-    );
-
-  border-top:
-    1px solid rgba(220, 215, 225, .16);
+    radial-gradient(circle at 85% 10%, rgba(130,85,156,.20), transparent 40%),
+    linear-gradient(180deg, #34213f 0%, #211629 100%);
+  border-top: 1px solid rgba(220,215,225,.16);
 }
 
-
-/* Show press kit when opened */
-
-.press-kit.open {
-  display: block;
-}
-
-
-.press-inner {
-  width: 100%;
-
+.news-inner {
   max-width: 1080px;
-
   margin: 0 auto;
 }
 
+.news-header {
+  max-width: 720px;
+  margin: 0 auto 55px;
+  text-align: center;
+}
 
-/* =========================
-   PRESS HEADER
-========================= */
+.news-kicker {
+  margin: 0 0 14px;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: .25em;
+  text-transform: uppercase;
+  color: #bdb8c3;
+}
+
+.news-title {
+  margin: 0 0 18px;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(42px, 5vw, 62px);
+  font-weight: 400;
+  color: #d6d2da;
+}
+
+.news-intro {
+  font-size: 16px;
+  line-height: 1.75;
+  color: rgba(255,255,255,.70);
+}
+
+/* FEATURED ARTICLE */
+.news-card {
+  display: grid;
+  grid-template-columns: 280px 1fr;
+  overflow: hidden;
+  border: 1px solid rgba(220,215,225,.20);
+  border-radius: 7px;
+  background: rgba(255,255,255,.045);
+  box-shadow: 0 20px 45px rgba(0,0,0,.18);
+  transition: transform .25s ease, box-shadow .25s ease;
+}
+
+.news-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 26px 55px rgba(0,0,0,.27);
+}
+
+.news-card-image {
+  min-height: 340px;
+  background: #24172f;
+}
+
+.news-card-image img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.news-card-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 45px;
+}
+
+.news-source {
+  margin: 0 0 17px;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: .16em;
+  text-transform: uppercase;
+  color: #c4b7cf;
+}
+
+.news-headline {
+  margin: 0 0 18px;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(25px, 3vw, 35px);
+  font-weight: 400;
+  line-height: 1.25;
+  color: #e5e0e9;
+}
+
+.news-description {
+  margin: 0 0 28px;
+  font-size: 15px;
+  line-height: 1.8;
+  color: rgba(255,255,255,.74);
+}
+
+.news-link {
+  align-self: flex-start;
+  color: #d9d4df;
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: .02em;
+  text-decoration: none;
+  border-bottom: 1px solid rgba(217,212,223,.5);
+  padding-bottom: 6px;
+  transition: color .2s ease, border-color .2s ease;
+}
+
+.news-link:hover {
+  color: #ffffff;
+  border-color: #ffffff;
+}
+
+/* =====================================
+   PRESS KIT
+===================================== */
+.press-kit {
+  display: none;
+  position: relative;
+  padding: 105px 30px 115px;
+  background:
+    radial-gradient(circle at 80% 15%, rgba(128,78,150,.18), transparent 35%),
+    linear-gradient(180deg, rgba(28,17,36,.96), rgba(37,22,48,.98));
+  border-top: 1px solid rgba(220,215,225,.16);
+}
+
+.press-kit.open { display: block; }
+
+.press-inner {
+  width: 100%;
+  max-width: 1080px;
+  margin: 0 auto;
+}
 
 .press-header {
   text-align: center;
-
   max-width: 700px;
-
   margin: 0 auto 75px;
 }
 
 .press-kicker {
   margin: 0 0 14px;
-
   font-size: 12px;
-
   font-weight: 700;
-
   letter-spacing: .28em;
-
   text-transform: uppercase;
-
   color: #bdb8c3;
 }
 
 .press-title {
   margin: 0 0 18px;
-
-  font-family:
-    Georgia,
-    "Times New Roman",
-    serif;
-
+  font-family: Georgia, "Times New Roman", serif;
   font-size: clamp(46px, 6vw, 68px);
-
   line-height: 1;
-
   font-weight: 400;
-
   color: #d6d2da;
 }
 
 .press-intro {
   margin: 0;
-
   font-size: 16px;
-
   line-height: 1.7;
-
-  color: rgba(255, 255, 255, .68);
+  color: rgba(255,255,255,.68);
 }
-
-
-/* =========================
-   PRESS SECTIONS
-========================= */
 
 .press-section {
   padding: 70px 0;
-
-  border-top:
-    1px solid rgba(220, 215, 225, .14);
+  border-top: 1px solid rgba(220,215,225,.14);
 }
 
 .section-label {
   margin: 0 0 16px;
-
   font-size: 11px;
-
   font-weight: 700;
-
   letter-spacing: .23em;
-
   text-transform: uppercase;
-
   color: #aaa5af;
 }
 
 .section-heading {
   margin: 0 0 28px;
-
-  font-family:
-    Georgia,
-    "Times New Roman",
-    serif;
-
+  font-family: Georgia, "Times New Roman", serif;
   font-size: clamp(32px, 4vw, 44px);
-
   font-weight: 400;
-
   color: #d6d2da;
 }
 
-
-/* =========================
-   ABOUT BOOK
-========================= */
-
 .book-about {
   display: grid;
-
   grid-template-columns: 1fr 2fr;
-
   gap: 65px;
-
   align-items: start;
 }
 
-.book-about-title h2 {
-  margin-top: 0;
-}
+.book-about-title h2 { margin-top: 0; }
 
 .press-copy {
   font-size: 17px;
-
   line-height: 1.8;
-
-  color: rgba(255, 255, 255, .82);
+  color: rgba(255,255,255,.82);
 }
 
-.press-copy p {
-  margin: 0 0 20px;
-}
-
-
-/* =========================
-   ABOUT AUTHOR
-========================= */
+.press-copy p { margin: 0 0 20px; }
 
 .author-layout {
   display: grid;
-
   grid-template-columns: 330px 1fr;
-
   gap: 65px;
-
   align-items: center;
 }
 
 .author-main-photo {
   width: 100%;
-
   display: block;
-
   border-radius: 5px;
-
-  box-shadow:
-    0 25px 55px rgba(0, 0, 0, .35);
+  box-shadow: 0 25px 55px rgba(0,0,0,.35);
 }
 
-
-/* =========================
-   PHOTO GALLERY
-========================= */
-
-.gallery-header {
-  margin-bottom: 35px;
-}
+.gallery-header { margin-bottom: 35px; }
 
 .photo-grid {
   display: grid;
-
-  grid-template-columns:
-    repeat(4, 1fr);
-
+  grid-template-columns: repeat(4, 1fr);
   gap: 16px;
-
   align-items: stretch;
 }
 
 .photo-grid a {
   display: block;
-
   overflow: hidden;
-
   border-radius: 5px;
-
   background: #24172f;
-
-  box-shadow:
-    0 15px 35px rgba(0, 0, 0, .22);
+  box-shadow: 0 15px 35px rgba(0,0,0,.22);
 }
 
 .photo-grid img {
   display: block;
-
   width: 100%;
-
   height: 330px;
-
   object-fit: cover;
-
-  transition:
-    transform .35s ease,
-    opacity .35s ease;
+  transition: transform .35s ease, opacity .35s ease;
 }
 
 .photo-grid a:hover img {
   transform: scale(1.035);
-
   opacity: .88;
 }
 
 .photo-note {
   margin: 18px 0 0;
-
   font-size: 13px;
-
-  color: rgba(255, 255, 255, .48);
+  color: rgba(255,255,255,.48);
 }
-
-
-/* =========================
-   INTERVIEW QUESTIONS
-========================= */
 
 .interview-intro {
   max-width: 650px;
-
   margin-bottom: 40px;
-
   font-size: 16px;
-
   line-height: 1.7;
-
-  color: rgba(255, 255, 255, .65);
+  color: rgba(255,255,255,.65);
 }
 
-.questions {
-  max-width: 900px;
-}
+.questions { max-width: 900px; }
 
 .question {
   display: grid;
-
   grid-template-columns: 65px 1fr;
-
   gap: 25px;
-
   padding: 27px 0;
-
-  border-top:
-    1px solid rgba(220, 215, 225, .12);
+  border-top: 1px solid rgba(220,215,225,.12);
 }
 
 .question:last-child {
-  border-bottom:
-    1px solid rgba(220, 215, 225, .12);
+  border-bottom: 1px solid rgba(220,215,225,.12);
 }
 
 .question-number {
-  font-family:
-    Georgia,
-    "Times New Roman",
-    serif;
-
+  font-family: Georgia, "Times New Roman", serif;
   font-size: 18px;
-
   color: #aaa6b0;
 }
 
 .question-text {
   margin: 0;
-
-  font-family:
-    Georgia,
-    "Times New Roman",
-    serif;
-
+  font-family: Georgia, "Times New Roman", serif;
   font-size: 20px;
-
   line-height: 1.55;
-
-  color: rgba(255, 255, 255, .88);
+  color: rgba(255,255,255,.88);
 }
-
-
-/* =========================
-   PRESS CONTACT
-========================= */
 
 .press-contact {
   margin-top: 70px;
-
   padding: 45px;
-
   text-align: center;
-
-  border:
-    1px solid rgba(220, 215, 225, .16);
-
+  border: 1px solid rgba(220,215,225,.16);
   border-radius: 6px;
-
-  background:
-    rgba(255, 255, 255, .025);
+  background: rgba(255,255,255,.025);
 }
 
 .press-contact h3 {
   margin: 0 0 12px;
-
-  font-family:
-    Georgia,
-    "Times New Roman",
-    serif;
-
+  font-family: Georgia, "Times New Roman", serif;
   font-size: 29px;
-
   font-weight: 400;
-
   color: #d6d2da;
 }
 
 .press-contact p {
   margin: 0 0 25px;
-
-  color: rgba(255, 255, 255, .65);
-
+  color: rgba(255,255,255,.65);
   line-height: 1.6;
 }
 
-
-
-/* =========================
-   FOOTER
-========================= */
-
+/* FOOTER */
 footer {
   text-align: center;
-
   padding: 22px;
-
   background: #1c1124;
-
-  border-top:
-    1px solid rgba(220, 215, 225, .12);
-
+  border-top: 1px solid rgba(220,215,225,.12);
   font-size: 12px;
-
-  color: rgba(230, 225, 235, .60);
+  color: rgba(230,225,235,.60);
 }
 
-
-/* =========================
-   TABLET
-========================= */
-
+/* TABLET */
 @media (max-width: 900px) {
-
   .book-about {
     grid-template-columns: 1fr;
-
     gap: 15px;
   }
 
   .author-layout {
     grid-template-columns: 280px 1fr;
-
     gap: 40px;
   }
 
   .photo-grid {
-    grid-template-columns:
-      repeat(2, 1fr);
+    grid-template-columns: repeat(2, 1fr);
   }
-
 }
 
-
-/* =========================
-   MOBILE
-========================= */
-
+/* MOBILE */
 @media (max-width: 800px) {
-
-  main {
-    padding: 50px 22px;
-  }
+  main { padding: 50px 22px; }
 
   .wrap {
     grid-template-columns: 1fr;
-
     gap: 45px;
-
     text-align: center;
   }
 
   .cover-container {
     width: min(310px, 85%);
-
     margin: 0 auto;
   }
 
-  .cover {
-    margin: 0 auto;
-  }
-
-  .content {
-    margin: 0 auto;
-  }
-
-  h1 {
-    font-size: 48px;
-  }
+  .cover { margin: 0 auto; }
+  .content { margin: 0 auto; }
+  h1 { font-size: 48px; }
 
   .copy {
     font-size: 16px;
-
     line-height: 1.65;
   }
 
-  .buttons {
-    justify-content: center;
+  .buttons { justify-content: center; }
+  .publisher { text-align: center; }
+  .press-line { justify-content: center; }
+  .press-icon { height: 58px; }
+  .press-letters { width: 360px; }
+
+  .in-the-press {
+    padding: 75px 24px 85px;
   }
 
-  .publisher {
-    text-align: center;
+  .news-card {
+    grid-template-columns: 1fr;
   }
 
-  .press-line {
-    justify-content: center;
+  .news-card-image {
+    height: 300px;
+    min-height: 0;
   }
 
-  .press-icon {
-    height: 58px;
+  .news-card-content {
+    padding: 32px;
   }
 
-  .press-letters {
-    width: 360px;
-  }
-
-  .press-kit {
-    padding:
-      80px 24px 90px;
-  }
-
-  .press-header {
-    margin-bottom: 55px;
-  }
-
-  .press-section {
-    padding: 55px 0;
-  }
+  .press-kit { padding: 80px 24px 90px; }
+  .press-header { margin-bottom: 55px; }
+  .press-section { padding: 55px 0; }
 
   .author-layout {
     grid-template-columns: 1fr;
@@ -796,139 +560,80 @@ footer {
 
   .author-main-photo {
     max-width: 360px;
-
     margin: 0 auto;
   }
-
 }
 
-
-/* =========================
-   SMALL PHONES
-========================= */
-
+/* SMALL PHONES */
 @media (max-width: 480px) {
+  main { padding: 40px 20px; }
+  h1 { font-size: 41px; }
+  .author { font-size: 17px; }
+  .copy { font-size: 16px; }
 
-  main {
-    padding: 40px 20px;
-  }
+  .buttons { flex-direction: column; }
+  a.button { width: 100%; }
 
-  h1 {
-    font-size: 41px;
-  }
-
-  .author {
-    font-size: 17px;
-  }
-
-  .copy {
-    font-size: 16px;
-  }
-
-  .buttons {
-    flex-direction: column;
-  }
-
-  a.button {
-    width: 100%;
-  }
-
-  .press-icon {
-    height: 50px;
-  }
+  .press-icon { height: 50px; }
 
   .press-letters {
     width: 280px;
-
     max-width: 76%;
   }
 
-  .press-kit {
-    padding:
-      65px 20px 75px;
+  .in-the-press {
+    padding: 65px 20px 75px;
   }
 
-  .press-title {
-    font-size: 45px;
-  }
+  .news-title { font-size: 43px; }
+  .news-card-image { height: 260px; }
+  .news-card-content { padding: 27px 23px; }
+  .news-headline { font-size: 27px; }
+
+  .press-kit { padding: 65px 20px 75px; }
+  .press-title { font-size: 45px; }
 
   .photo-grid {
-    grid-template-columns:
-      1fr 1fr;
-
+    grid-template-columns: 1fr 1fr;
     gap: 10px;
   }
 
-  .photo-grid img {
-    height: 235px;
-  }
+  .photo-grid img { height: 235px; }
 
   .question {
     grid-template-columns: 42px 1fr;
-
     gap: 12px;
   }
 
-  .question-text {
-    font-size: 18px;
-  }
-
-  .press-contact {
-    padding: 35px 22px;
-  }
-
+  .question-text { font-size: 18px; }
+  .press-contact { padding: 35px 22px; }
 }
-
 </style>
 </head>
 
-
 <body>
 
-
-<!-- =====================================================
-     HERO
-====================================================== -->
-
+<!-- =====================================
+     MAIN BOOK SECTION
+===================================== -->
 <main id="book">
-
   <div class="wrap">
 
-
-    <!-- BOOK COVER -->
-
     <div class="cover-container">
-
       <img
         src="cover.jpg"
         alt="Across Two Courts book cover"
         class="cover"
       >
-
     </div>
-
-
-
-    <!-- BOOK INFO -->
 
     <div class="content">
 
+      <h1>Across Two Courts</h1>
 
-      <h1>
-        Across Two Courts
-      </h1>
-
-
-      <p class="author">
-        by Laia Albàs Ferrer
-      </p>
-
-
-
-      <!-- DESCRIPTION -->
+      <p class="author">by Laia Albàs Ferrer</p>
 
       <div class="copy">
-
         <p>
           <em>Across Two Courts</em> captures the heart and soul
           of a young basketball player’s journey from Catalonia
@@ -943,12 +648,7 @@ footer {
           true-life story is about courage, resilience and
           pursuing a dream far from home.
         </p>
-
       </div>
-
-
-
-      <!-- BUTTONS -->
 
       <div class="buttons">
 
@@ -961,7 +661,6 @@ footer {
           Buy Across Two Courts
         </a>
 
-
         <a
           class="button silver"
           href="https://www.linkedin.com/in/laia-alb%C3%A0s/"
@@ -970,7 +669,6 @@ footer {
         >
           Contact Laia
         </a>
-
 
         <a
           class="button silver"
@@ -982,19 +680,10 @@ footer {
 
       </div>
 
-
-
-      <!-- PUBLISHER -->
-
       <section class="publisher">
-
-        <p class="label">
-          Published by
-        </p>
-
+        <p class="label">Published by</p>
 
         <div class="press-line">
-
           <img
             src="logo.png"
             alt=""
@@ -1006,43 +695,112 @@ footer {
             alt="University of Bridgeport Press"
             class="press-letters"
           >
-
         </div>
-
       </section>
 
-
     </div>
-
   </div>
-
 </main>
 
 
+<!-- =====================================
+     IN THE PRESS
+     VISIBLE ON MAIN WEBSITE
+===================================== -->
+<section class="in-the-press" id="in-the-press">
 
-<!-- =====================================================
+  <div class="news-inner">
+
+    <header class="news-header">
+
+      <p class="news-kicker">Media Coverage</p>
+
+      <h2 class="news-title">In the Press</h2>
+
+      <p class="news-intro">
+        Discover the stories, interviews and features behind
+        <em>Across Two Courts</em> and Laia Albàs Ferrer's
+        journey from Catalonia to American college basketball.
+      </p>
+
+    </header>
+
+    <!-- FEATURED ARTICLE -->
+    <article class="news-card">
+
+      <div class="news-card-image">
+        <img
+          src="author3.jpg"
+          alt="Laia Albàs Ferrer"
+        >
+      </div>
+
+      <div class="news-card-content">
+
+        <p class="news-source">
+          University of Bridgeport · July 16, 2026
+        </p>
+
+        <h3 class="news-headline">
+          Across Two Courts: A Student-Athlete’s
+          Journey from Spain to Connecticut
+        </h3>
+
+        <p class="news-description">
+          In this University of Bridgeport feature,
+          Laia Albàs Ferrer reflects on her journey
+          from Spain to the United States, balancing
+          college basketball with academics, and
+          turning her experiences into her first book.
+          The interview explores her writing process,
+          cultural transitions and hopes for readers.
+        </p>
+
+        <a
+          class="news-link"
+          href="https://www.bridgeport.edu/news/student-athlete-journey/"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Read Article ↗
+        </a>
+
+      </div>
+
+    </article>
+
+    <!--
+      TO ADD MORE ARTICLES LATER:
+
+      Copy the entire <article class="news-card">...</article>
+      block above and paste it here.
+
+      Replace:
+      - Image filename
+      - Publication and date
+      - Headline
+      - Description
+      - Article URL
+    -->
+
+  </div>
+
+</section>
+
+
+<!-- =====================================
      PRESS KIT
-====================================================== -->
-
-<section
-  class="press-kit"
-  id="press-kit"
->
+     HIDDEN UNTIL BUTTON IS CLICKED
+===================================== -->
+<section class="press-kit" id="press-kit">
 
   <div class="press-inner">
 
-
-    <!-- PRESS KIT HEADER -->
-
     <header class="press-header">
 
-      <p class="press-kicker">
-        Media Resources
-      </p>
+      <p class="press-kicker">Media Resources</p>
 
-      <h2 class="press-title">
-        Press Kit
-      </h2>
+      <h2 class="press-title">Press Kit</h2>
 
       <p class="press-intro">
         Author information, photography and interview resources
@@ -1052,25 +810,16 @@ footer {
     </header>
 
 
-
-    <!-- =========================
-         ABOUT THE BOOK
-    ========================== -->
-
+    <!-- ABOUT THE BOOK -->
     <section class="press-section book-about">
 
       <div class="book-about-title">
 
-        <p class="section-label">
-          Across Two Courts
-        </p>
+        <p class="section-label">Across Two Courts</p>
 
-        <h2 class="section-heading">
-          About the Book
-        </h2>
+        <h2 class="section-heading">About the Book</h2>
 
       </div>
-
 
       <div class="press-copy">
 
@@ -1094,37 +843,24 @@ footer {
     </section>
 
 
-
-    <!-- =========================
-         ABOUT THE AUTHOR
-    ========================== -->
-
+    <!-- ABOUT THE AUTHOR -->
     <section class="press-section">
 
       <div class="author-layout">
 
-
         <div>
-
           <img
             src="author3.jpg"
             alt="Laia Albàs Ferrer"
             class="author-main-photo"
           >
-
         </div>
-
 
         <div>
 
-          <p class="section-label">
-            Author Biography
-          </p>
+          <p class="section-label">Author Biography</p>
 
-          <h2 class="section-heading">
-            About Laia
-          </h2>
-
+          <h2 class="section-heading">About Laia</h2>
 
           <div class="press-copy">
 
@@ -1166,18 +902,12 @@ footer {
     </section>
 
 
-
-    <!-- =========================
-         MEDIA PHOTOS
-    ========================== -->
-
+    <!-- MEDIA PHOTOS -->
     <section class="press-section">
 
       <div class="gallery-header">
 
-        <p class="section-label">
-          Media
-        </p>
+        <p class="section-label">Media</p>
 
         <h2 class="section-heading">
           Author Photos &amp; Book Cover
@@ -1185,9 +915,7 @@ footer {
 
       </div>
 
-
       <div class="photo-grid">
-
 
         <a
           href="author1.jpg"
@@ -1201,7 +929,6 @@ footer {
           >
         </a>
 
-
         <a
           href="author2.jpg"
           target="_blank"
@@ -1213,7 +940,6 @@ footer {
             alt="Laia Albàs Ferrer author photo"
           >
         </a>
-
 
         <a
           href="author3.jpg"
@@ -1227,7 +953,6 @@ footer {
           >
         </a>
 
-
         <a
           href="cover.jpg"
           target="_blank"
@@ -1240,188 +965,131 @@ footer {
           >
         </a>
 
-
       </div>
 
-
       <p class="photo-note">
-        Click any image to view the full-resolution photograph or book cover.
+        Click any image to view the full-resolution photograph
+        or book cover.
       </p>
 
     </section>
 
 
-
-    <!-- =========================
-         INTERVIEW QUESTIONS
-    ========================== -->
-
+    <!-- INTERVIEW QUESTIONS -->
     <section class="press-section">
 
-      <p class="section-label">
-        Interviews
-      </p>
+      <p class="section-label">Interviews</p>
 
       <h2 class="section-heading">
         Suggested Interview Questions
       </h2>
-
 
       <p class="interview-intro">
         Suggested conversation starters for interviews,
         podcasts, features and other media appearances.
       </p>
 
-
       <div class="questions">
 
-
         <div class="question">
-
-          <div class="question-number">
-            01
-          </div>
-
+          <div class="question-number">01</div>
           <p class="question-text">
             You came to the United States from a small town in
             Catalonia to pursue basketball. What surprised you
             most when you arrived?
           </p>
-
         </div>
 
-
         <div class="question">
-
-          <div class="question-number">
-            02
-          </div>
-
+          <div class="question-number">02</div>
           <p class="question-text">
             What are the biggest differences between the way
             student-athletes are treated in Europe and the
             United States?
           </p>
-
         </div>
 
-
         <div class="question">
-
-          <div class="question-number">
-            03
-          </div>
-
+          <div class="question-number">03</div>
           <p class="question-text">
             Your basketball career has included injuries,
             setbacks and unexpected opportunities. What have
             those experiences taught you?
           </p>
-
         </div>
 
-
         <div class="question">
-
-          <div class="question-number">
-            04
-          </div>
-
+          <div class="question-number">04</div>
           <p class="question-text">
             What would you tell a young European athlete who
             is considering coming to the United States to play
             college sports?
           </p>
-
         </div>
 
-
         <div class="question">
-
-          <div class="question-number">
-            05
-          </div>
-
+          <div class="question-number">05</div>
           <p class="question-text">
             You called the book <em>Across Two Courts</em>.
             What do those “two courts” represent to you now?
           </p>
-
         </div>
-
 
       </div>
 
     </section>
 
 
+    <!-- MEDIA CONTACT -->
+    <div class="press-contact">
 
- <!-- =========================
-     MEDIA CONTACT
-========================== -->
+      <h3>Media &amp; Interview Inquiries</h3>
 
-<div class="press-contact">
+      <p>
+        For interview requests, media inquiries or additional
+        information about <em>Across Two Courts</em>, contact
+        Laia Albàs Ferrer.
+      </p>
 
-  <h3>
-    Media &amp; Interview Inquiries
-  </h3>
+      <a
+        class="button silver"
+        href="https://www.linkedin.com/in/laia-alb%C3%A0s/"
+        target="_blank"
+        rel="noopener"
+      >
+        Contact Laia Albàs Ferrer
+      </a>
 
-  <p>
-    For interview requests, media inquiries or additional
-    information about <em>Across Two Courts</em>, contact
-    Laia Albàs Ferrer.
-  </p>
+    </div>
 
-  <a
-    class="button silver"
-    href="https://www.linkedin.com/in/laia-alb%C3%A0s/"
-    target="_blank"
-    rel="noopener"
-  >
-    Contact Laia Albàs Ferrer
-  </a>
-
-</div>
-
-
-</div>
+  </div>
 
 </section>
 
 
+<!-- FOOTER -->
 <footer>
   © Laia Albàs Ferrer
 </footer>
 
-<!-- =====================================================
-     PRESS KIT OPEN / CLOSE
-====================================================== -->
 
+<!-- PRESS KIT OPEN FUNCTION -->
 <script>
-
 function openPressKit(event) {
-
   event.preventDefault();
 
-  const pressKit =
-    document.getElementById("press-kit");
+  const pressKit = document.getElementById("press-kit");
 
   pressKit.classList.add("open");
 
   setTimeout(function() {
-
     pressKit.scrollIntoView({
       behavior: "smooth",
       block: "start"
     });
-
   }, 50);
-
 }
-
 </script>
 
-
 </body>
-
 </html>
